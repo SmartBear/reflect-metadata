@@ -540,9 +540,8 @@ var Reflect;
                 var decorator = decorators[i];
                 var decorated = decorator(target);
                 if (!IsUndefined(decorated) && !IsNull(decorated)) {
-                    if (!IsConstructor(decorated))
-                        throw new TypeError();
-                    target = decorated;
+                    if (IsConstructor(decorated))
+                        target = decorated;
                 }
             }
             return target;
