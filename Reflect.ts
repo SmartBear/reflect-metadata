@@ -1201,8 +1201,7 @@ namespace Reflect {
                 const decorator = decorators[i];
                 const decorated = decorator(target);
                 if (!IsUndefined(decorated) && !IsNull(decorated)) {
-                    if (IsConstructor(decorated))
-                        target = <Function>decorated;
+                    target = <Function>decorated;
                 }
             }
             return target;
